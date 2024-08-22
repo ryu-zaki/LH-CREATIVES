@@ -1,0 +1,56 @@
+.contactSection {
+    background: url('../assets/contact/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding-block: 4em;
+
+    --googleMapWidth: 90%;
+    --googleMapMax: 30em;
+    --mapHeight: 20em;
+}
+
+.contactSection h2 {
+    color: var(--white);
+}
+
+.contactSection .google__map {
+    margin-inline: auto;
+    width: var(--googleMapWidth);
+    max-width: var(--googleMapMax);
+    margin-top: 1em;
+}
+
+.contactSection .google__map > iframe {
+    width: 100%;
+    border-radius: .6em;
+    height: var(--mapHeight);
+}
+
+@media (min-width: 764px) {
+    .contactSection {
+        --googleMapMax: 40em;
+    }
+
+    .contactSection .google__map {
+        margin-top: 2em;
+    }
+
+    
+}
+
+@media (min-width: 1024px) {
+    .contactSection {
+        --googleMapMax: 60em;
+        --mapHeight: 30em;
+    }
+}
+
+@media (min-width: 1280px) {
+    .contactSection {
+    --articlesMaxWidth: 68em;
+    }
+}
+
+

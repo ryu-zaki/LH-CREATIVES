@@ -1,0 +1,326 @@
+ .singlePageHero {
+    position: relative;
+    width: 100%;
+    min-height: 140px;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    overflow: hidden;
+    --mainTextFs: 2em;
+}
+
+.singlePageHero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background-image: url('../assets/mypage/header.jpg');
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: imageZoom 1.6s 1.6s forwards;
+    scale: 2;
+}
+
+@keyframes imageZoom {
+    to {
+        scale: 1;
+    }
+}
+
+
+.singlePageHero h1 {
+    z-index: 1;
+    font-size: var(--mainTextFs);
+}
+
+.singlePageHero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(.3em);
+    animation: blurBack .6s 1.6s forwards;
+}
+
+.inputs-field form h3 {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.inputs-field.dashboard form > div {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em; 
+    align-items: center;
+    width: 100%;
+    
+}
+
+.inputs-field.dashboard form > div p {
+    position: relative;
+    color: var(--green);
+    padding: 1em;
+    font-size: .9em;
+    text-align: center;
+    border-radius: .3em;
+    width: 100%;
+    max-width: 18em;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-field.dashboard form > div p span,
+.err-message span {
+    display: block;
+    translate: 0 3em;
+    animation: stateBack 1s .5s forwards;
+}
+
+.inputs-field.dashboard form > div p::before,
+.err-message::before {
+    content: '';
+    position: absolute;
+    background-color: var(--lightGreen);
+    width: 1em;
+    aspect-ratio: 1;
+    scale: 0;
+    border-radius: 50%;
+    z-index: -1;
+    animation: bgAnim 1.5s .5s forwards ease-in-out;
+}
+
+@keyframes bgAnim {
+
+    to {
+       scale: 30;
+    }
+    
+  }
+
+.inputs-field.dashboard form button {
+    background-color: var(--pink);
+    padding: 1em 2.5em;
+    font-size: .8em;
+    cursor: pointer;
+    color: var(--white);
+    border: 0;
+    outline: 0;
+    align-self: center;
+    border-radius: .4em;
+}
+
+@keyframes blurBack {
+    to {
+        backdrop-filter: blur(0);
+    }
+}
+
+/* Forms */
+
+.inputs-field {
+    width: 90%;
+    margin-inline: auto;
+
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    margin-block: 4em;
+    max-width: 20em;
+
+    --inputBoxHeight: 2.2em;
+}
+
+.inputs-field > div {
+    align-self: flex-end;
+    display: flex;
+    gap: 1em;
+    font-size: .9em;
+}
+
+.inputs-field form {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 2em 2em;
+    position: relative;
+    border-radius: .5em;
+}
+
+.inputs-field form > .input__box {
+    position: relative;
+    height: var(--inputBoxHeight);
+
+    display: flex;
+    align-items: center;
+}
+
+form > .input__box :is(label, input) {
+    position: absolute;
+}
+
+form > .input__box input {
+    inset: 0;
+    border-radius: .4em;
+    outline: 0;
+    border: 1px solid var(--gray);
+    padding-inline: 1em;
+}
+
+form > .input__box label {
+   /*  top: -.5em;
+    translate: 0 -100%; */
+    top: 30%;
+    left: 1em;
+    font-size: .7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s;
+    color: var(--gray);
+}
+
+form > .input__box :is(input:valid, input:focus) ~ label {
+    top: -.5em;
+    translate: 0 -100%;
+    left: 0;
+    font-size: .6em;
+    color: var(--dark);
+    font-weight: bold;
+}
+
+.inputs-field .signin__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inputs-field .signin__btns > span {
+    color: blue;
+    text-decoration: underline;
+    font-size: .8em;
+}
+
+.inputs-field .signin__btns button {
+   background-color: var(--pink);
+   color: var(--white);
+   border: 0;
+   outline: 0;
+   padding: .6em 2em;
+   border-radius: .2em;
+}
+
+button.loading-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.loading-btn .spinner {
+    position: absolute;
+    opacity: 0;
+}
+
+
+button.loading-btn.loading .spinner {
+    opacity: 1;
+} 
+button.loading-btn.loading > span {
+    opacity: 0;
+}
+
+.err-message {
+    overflow: hidden;
+    color: var(--darkPink);
+    position: relative;
+    padding: .8em 2.5em;
+    font-weight: bold;
+    border-radius: .2em;   
+    white-space: nowrap;
+    font-size: .9em;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 18em;
+    margin-inline: auto;
+
+}
+
+.err-message::before {
+    background-color: var(--lightPink);
+}
+
+
+@media (min-width: 680px) {
+    
+    .singlePageHero {
+        --mainTextFs: 3em;
+        min-height:250px;
+    }
+
+    .inputs-field form h3 {
+        font-size: 1.5em;
+    }
+
+    .err-message {
+        padding-block: 1em;
+    } 
+
+    .inputs-field {
+        max-width: 30em;
+
+        --inputBoxHeight: 3em;
+        margin-block: 7em;
+    }
+
+    .inputs-field form {
+        padding: 3em;
+    }
+
+    form > .input__box label {
+        top: 38%;
+    }
+
+    form > .input__box :is(input:valid, input:focus) ~ label {
+        top: -.7em;
+    }
+
+    .inputs-field .signin__btns button {
+        padding: .6em 2em;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .inputs-field > div {
+        font-size: 1em;
+        margin-top: 1em;
+    }
+
+    .inputs-field .signin__btns {
+        margin-top: 1em;
+        align-items: end;
+    }
+
+    .inputs-field.dashboard form h3 {
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .singlePageHero {
+        --mainTextFs: 4em;  
+    }
+
+    .singlePageHero {
+        min-height: 22em;
+    }
+}

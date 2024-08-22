@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LH&Creatives</title>
+
+    <link href="../global_style.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/navigation.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/signin.css" rel="stylesheet" type="text/css" />
+    
+    <script src="../scripts/navigation.js" defer></script>
+    <script src="https://kit.fontawesome.com/5a2d8f25c5.js" crossorigin="anonymous"></script>
+    <script src="../scripts/dashboard.js" defer></script>
+</head>
+<body>
+  
+  <div id="close" class="overlayCloser" data-menu-controls></div>
+    <div class="navBar">
+       <div data-menu-slider class="navBar__wrapper">
+        <div class="logo__text">
+            <h3 class="nav-logo-text">Dummy</h3>
+            
+            <i id="close" data-menu-controls class="fa-solid fa-x"></i>
+        </div>
+        
+
+        <div class="nav__links">
+            <nav>
+                <a href="#services">Service</a>
+                <a href="#about">About Us</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+             </nav>
+     
+             <button data-signin-btn type="button">Sign in</button>
+        </div>  
+    </div>   
+    </div>
+
+    <div class="navbar--mobile">
+      <div class="navbar__wrapper--mobile">
+        <h3 class="nav-logo-text">Dummy</h3>
+      
+        <!-- Burger Icon -->
+        <div class="burger__icon">
+          <div id="open" data-menu-controls class="eventTrigger"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+     
+    </div>
+   
+
+    <!-- Body Start -->
+     <div class="singlePageHero">
+      <h1 class="page-title-animation"><div><span>Dashboard</span></div></h1>
+     </div>
+     
+     <div class="inputs-field dashboard">
+      <form data-logout-form>
+        <h3>Welcome Jhonwell</h3>
+        <div>
+            <p><span>Login Succeed</span></p>
+             
+            <button data-logout-btn type="submit" class="loading-btn" data-logout-btn>
+              <span>Logout your account</span>
+               
+              <l-line-spinner
+              class="spinner"
+                 size="20"
+                 stroke="2"
+                 speed="1"
+                 color="white" 
+              ></l-line-spinner>
+            </button>
+        </div>
+        
+    </form>
+
+
+    <div>
+      <a href="">Privacy</a>
+      <a href="">Terms</a>
+    </div>
+     </div>
+        
+      
+
+<!-- Body End -->
+    <footer>
+      <div>
+        <h2>Dummy</h2>
+        <span>&copy; Dummy</span>
+      </div>
+        
+     </footer>
+</body>
+</html>

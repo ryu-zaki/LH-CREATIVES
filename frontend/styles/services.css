@@ -1,0 +1,56 @@
+
+
+.serviceSection h2 {
+    text-align: center;
+}
+.serviceSection .services__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4em;
+  margin-top: 2em;
+  padding-inline: 20px;
+
+} 
+
+.serviceSection .services__wrapper img {
+    width: 100%;
+    margin-bottom: 1em;
+    margin-inline: auto;
+}
+
+.serviceSection .services__wrapper p {
+    line-height: 1.6;
+}
+.serviceSection .services__wrapper > section {
+    display: flex;
+    max-width: 30em;
+    flex-direction: column;
+    gap: 1em;
+    text-align: center;
+    margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+
+    .serviceSection .services__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2em;
+        row-gap: 7em;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    :root {
+        --categoryText: 3.7em;
+    }
+
+    .serviceSection .services__wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5em;
+    }
+
+    .serviceSection .services__wrapper > section {
+        text-align: left;
+    }
+}

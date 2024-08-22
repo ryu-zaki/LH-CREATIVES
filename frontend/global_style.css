@@ -1,0 +1,142 @@
+:root {
+    --primary: #FFF000;
+    --white: #FFFFFF;
+    --darkdark: #333333;
+    --dark: #00000099;
+    --gray: #0000004D;
+    --lightGray: #DDDDDD;
+    --pink: #E3007F;
+    --darkPink: #721C24 ;
+    --lightPink: #F5C6CB;
+    ---blue: #00A9EA;
+    --lightGreen: #C3E6CB;
+    --green: #155724;
+  
+    /* Font Sizes */
+    --logoText: 20px;
+    --categoryText: 32px;
+    --actionBtn: 16px;
+    --regularText: 14px;
+
+  
+    /* Viewports */
+    --tabletVer: 768px;
+    --laptopVer: 1024px;
+
+    /* Widths */
+    --sliderConWidth: 35em;
+    --sliderBtnSize: 1em;
+    --globalMaxWidth: 75em;
+  }
+  
+  *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+      scroll-behavior: smooth;
+  }
+
+  .mainContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mainContainer > * {
+    padding-top: 5em;
+  }
+
+  .categoryText {
+    font-size: var(--categoryText);
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  .page-title-animation {
+     position: relative;
+  }
+
+  .page-title-animation::before {
+    content: '';
+    position: absolute;
+    bottom: -.2em;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    animation: pageTitleAnim 2.5s 1s forwards ease-in-out;
+    scale: 0 1;
+  }
+
+  .page-title-animation > div {
+    overflow: hidden;
+  }
+
+  .page-title-animation > div > span {
+   display: block;
+   translate: 0 100%;
+   animation: textVisible .6s 1.8s forwards ease-in-out;
+  }
+
+  @keyframes pageTitleAnim {
+
+    50%,
+    70% {
+      scale: 1.5 1;
+    }
+
+    to {
+      scale: 0 1;
+    }
+    
+  }
+
+  @keyframes textVisible {
+
+    to {
+       translate: 0 0;
+    }
+    
+  }
+
+  @keyframes stateBack {
+
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+    
+  }
+
+
+
+  @media (min-width: 768px) {
+
+    :root {
+      --sliderConWidth: 45em;
+      --sliderBtnSize: 1.5em;
+      --categoryText: 40px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    :root {
+      --sliderConWidth: 60em;
+      --sliderBtnSize: 2em;
+    }
+
+    .global_maxwidth {
+        padding-inline: 0px;
+        max-width: 75em;
+       
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --sliderConWidth: 70em;
+    }
+  }

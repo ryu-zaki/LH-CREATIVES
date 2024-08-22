@@ -1,0 +1,40 @@
+.about-us {
+    background: url('../assets/aboutus/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 30px 20px ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    color: var(--white);
+
+    --paraMax: 100%;
+    --paraLineHeight: 1.7;
+}
+
+.about-us p {
+    line-height: var(--paraLineHeight);
+    max-width: var(--paraMax);
+}
+
+@media (min-width: 764px) {
+  .about-us {
+    --paraMax: 75%; 
+    --paraLineHeight: 2.2;
+  }
+}
+
+@media (min-width: 1024px) {
+    .about-us p {
+        max-width: 60%;
+        line-height: 3;
+    }
+
+    .about-us {
+        gap: 2em;
+        padding-block: 4em;
+    }
+}

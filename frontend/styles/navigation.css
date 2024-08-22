@@ -1,0 +1,235 @@
+
+
+.navBar .navBar__wrapper {
+    position: fixed;
+    background-color: var(--dark);
+
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    backdrop-filter: blur(.5em);
+    flex-direction: column;
+    gap: 1em;
+
+    transition: all .5s ease-in-out;
+    translate: -100% 0;
+    z-index: 999;
+    max-width: 25em;
+}
+
+.navBar .navBar__wrapper.active {
+    translate: 0 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.navBar div.logo__text  {
+    color: var(--darkdark);
+    background-color: var(--primary);
+    padding: 17px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+div.logo__text i {
+    font-size: 1.2em;
+}
+
+
+.navBar .nav__links {
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+}
+
+.navBar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.navBar nav > a {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 17px 20px;
+}
+
+.navBar button {
+    background-color: var(--white);
+    color: var(--darkdark);
+    cursor: pointer;
+     outline: 0;
+     border: 0;
+     padding: 17px 20px;
+     font-size: var(--actionBtn);
+     margin-inline: 1em; 
+     font-weight: bold;
+     border-radius: .5em;
+}
+
+.google__map {
+    width: 100%;
+}
+
+.navbar--mobile {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: var(--primary);
+}
+
+.navbar--mobile .navbar__wrapper--mobile {
+    
+    color: var(--darkdark);
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: var(--primary);
+}
+
+footer > div {
+    display: flex;
+    color: var(--darkdark);
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+}
+
+footer > div span {
+    font-size: .9em;
+}
+
+.navbar--mobile h3 {
+    font-weight: bold;
+    color: var(--darkdark);
+}
+
+.navbar--mobile .burger__icon {
+    position: relative;
+    width: 2em;
+
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+    align-items: end;
+    position: relative;
+}
+
+.navbar--mobile .burger__icon > div {
+    background-color: var(--dark);
+    width: 100%;
+    height: 3px;
+    border-radius: .5em;
+}
+
+.navbar--mobile .burger__icon > div:last-child {
+    width: 70%;
+}
+
+.navbar--mobile .burger__icon > div.eventTrigger {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.overlayCloser {
+    position: fixed;
+    inset: 0;
+    background-color: transparent;
+    z-index: 1;
+    display: none;
+}
+
+.overlayCloser.active {
+    display: block;
+}
+
+.nav-logo-text {
+    cursor: pointer;
+}
+
+/* Tablet Version */
+@media (min-width: 768px) {
+
+    .navbar--mobile {
+        padding: 0;
+
+    }
+
+    .navbar--mobile .navbar__wrapper--mobile,
+    footer > div {
+        max-width: var(--tabletVer);
+        margin-inline: auto;
+    }
+}
+
+/* Laptop Version */
+@media (min-width: 1024px) {
+    .navbar--mobile {
+        display: none;
+    }
+
+    .navBar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+
+    .navBar .logo__text h3 {
+        font-size: 20px;
+    }
+
+    .navBar {
+        background-color: var(--primary);
+    }
+
+    .navBar .navBar__wrapper {
+       position: relative;
+       flex-direction: row;
+       justify-content: space-between;
+       translate: 0 0; 
+       background-color: transparent;
+       box-shadow: none;
+       max-width: var(--laptopVer);
+       transition: none;
+       margin-inline: auto;
+    }
+
+    .navBar .navBar__wrapper .logo__text i {
+       display: none;
+    }
+
+    .navBar .navBar__wrapper .nav__links,
+    .navBar .navBar__wrapper .nav__links nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .navBar__wrapper .nav__links nav  a {
+        color: var(--darkdark);
+    }
+
+    .navBar__wrapper button {
+        padding: 10px 25px;
+        border-radius: 5px;
+    }
+}
+
+/* Desktop Version */ 
+@media (min-width: 1280px) {
+
+    .navBar .navBar__wrapper,
+    footer > div {
+        max-width: 75em;
+    }
+}
